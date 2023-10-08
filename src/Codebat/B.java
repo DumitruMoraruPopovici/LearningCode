@@ -1,0 +1,34 @@
+package Codebat;
+class A {
+    static int num = 0;
+    void add() {
+        num+=100;
+    }
+}
+public class B extends A{
+
+
+        void add() {
+            num+=20;
+        }
+
+        void apply() {
+            num+=3;
+        }
+
+        void go() {
+            A a = new B();
+            B b = (B) a;
+            b.add();
+            a.add();
+            b.apply();
+            ((B) a).apply();
+            System.out.println(num);
+        }
+
+        public static void main(String[] args) {
+            new B().go();
+        }
+        // raspuns 46
+    }
+
